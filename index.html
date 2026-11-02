@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header" id="header">
+        <h1><span class="check-circle">✔</span> My Tasks</h1>
+        <p id="date-display">Today</p>
+      </div>
+
+      <!-- Task input and deadline -->
+      <div class="task-input" id="task-input">
+        <input
+          class="new-task"
+          id="new-task"
+          type="text"
+          placeholder="What do you need to do?"
+          aria-label="Task name"
+        />
+
+        <input
+          class="task-deadline"
+          id="task-deadline"
+          type="datetime-local"
+          title="Select task deadline"
+          aria-label="Task deadline"
+        />
+
+        <button
+          class="add-btn"
+          id="add-btn"
+          type="button"
+          aria-label="Add task"
+          title="Add task"
+        >
+          +
+        </button>
+      </div>
+
+      <!-- Navigation tabs -->
+      <div class="navigation-btn" id="navigation-btn">
+        <p>
+          <span id="all-btn" class="selected">All</span>
+          <span id="active-btn">Pending</span>
+          <span id="overdue-btn">Overdue</span>
+          <span id="completed-btn">Completed</span>
+        </p>
+      </div>
+
+      <!-- Empty state -->
+      <div class="screen" id="start-screen">
+        <img
+          src="img/clipboard_image.webp"
+          alt="Empty task list"
+          loading="lazy"
+          class="emptyListImg"
+          height="70"
+          width="60"
+        />
+        <p>No tasks here yet</p>
+      </div>
+
+      <!-- Task lists -->
+      <div class="task-container">
+        <!-- All tasks -->
+        <div class="screen active" id="all-screen">
+          <ul id="task-all"></ul>
+        </div>
+
+        <!-- Pending tasks -->
+        <div class="screen" id="active-screen">
+          <ul id="task-act"></ul>
+        </div>
+
+        <!-- Overdue tasks -->
+        <div class="screen" id="overdue-screen">
+          <ul id="task-overdue"></ul>
+        </div>
+
+        <!-- Completed tasks -->
+        <div class="screen" id="completed-screen">
+          <ul id="task-comp"></ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="task-info" id="task-info">
+          <div class="task-left">
+            <span id="task-left">0</span>
+            items left
+          </div>
+
+          <span id="clear" class="clear">Clear completed</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
